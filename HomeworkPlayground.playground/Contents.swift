@@ -30,3 +30,18 @@ func numberOfEachElementInTheArray(arr: [AnyHashable]) {
 }
 
 numberOfEachElementInTheArray(arr: ["a",5,9,5,"ali",true,"ali","c","a"])
+
+// 3- "*" Karakterinden piramit oluşturan fonksiyonu yazınız. Parametre olarak kaç katlı olacağı alınsın.
+/* Parametre 3 ise çıktı aşağıdaki şekilde olmalı
+     *
+     **
+     ***
+ */
+
+func pyramidFromStarCharacter(n: Int) {
+    for i in 1...n {
+        print("\(String(repeating: "*", count: i))")
+    }
+}
+
+pyramidFromStarCharacter(n: 6)
