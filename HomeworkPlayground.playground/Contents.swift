@@ -10,3 +10,23 @@ func wordIsPalindrome(word: String) -> Bool {
 
 wordIsPalindrome(word: "ama") // true
 wordIsPalindrome(word: "amaç") // false
+
+
+// 2- Verilen bir array içerisindeki her bir elemanın sayısını veren bir fonksiyon yazınız.
+
+func numberOfEachElementInTheArray(arr: [AnyHashable]) {
+    var numberOfElements = [AnyHashable:Int]()
+    for item in arr {
+        if numberOfElements[item] == nil {
+            numberOfElements[item] = 1
+        } else {
+            numberOfElements[item]! += 1
+        }
+    }
+    let numberOfElementList = numberOfElements.sorted(by: {$0.value < $1.value})
+    for (key, value) in numberOfElementList {
+        print("\(key): \(value)")
+    }
+}
+
+numberOfEachElementInTheArray(arr: ["a",5,9,5,"ali",true,"ali","c","a"])
