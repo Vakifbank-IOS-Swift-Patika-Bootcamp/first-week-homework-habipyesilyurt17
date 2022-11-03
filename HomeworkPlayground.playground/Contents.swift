@@ -45,3 +45,19 @@ func pyramidFromStarCharacter(n: Int) {
 }
 
 pyramidFromStarCharacter(n: 6)
+
+// 4- Yazdığınız piramit fonksiyonun çıktısını ortalı olacak şekilde yazınız.
+
+func pyramidFromStarLikeTriangle(num: Int) {
+    for i in 0..<num {
+       for _ in 0...num-i-1 {
+          print(terminator: " ")
+       }
+       for _ in 1...i+1 {
+          print("*", terminator: " ")
+       }
+       print("")
+    }
+}
+
+pyramidFromStarLikeTriangle(num: 6)
