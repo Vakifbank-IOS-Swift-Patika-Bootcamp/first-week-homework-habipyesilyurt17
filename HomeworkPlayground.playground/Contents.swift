@@ -95,23 +95,23 @@ fibonacciSequence(n: 20)
 // The prime factors of 13195 are 5, 7, 13 and 29.
 // 3. What is the largest prime factor of the number 600851475143 ?
 
-func findLargestPrimeFactor(number: Int) -> Int {
-    var mutableNumber = number
+func findLargestPrimeFactor(_ number: inout Int) -> Int {
+    //var mutableNumber = number
     var factors: [Int] = []
-    for i in 2...Int(sqrt(Double(mutableNumber))) {
-        while mutableNumber % i == 0 {
-            mutableNumber /= i
+    for i in 2...Int(sqrt(Double(number))) {
+        while number % i == 0 {
+            number /= i
             factors.append(i)
         }
     }
 
-    if mutableNumber != 1 {
-        factors.append(mutableNumber)
+    if number != 1 {
+        factors.append(number)
     }
     print("factors= \(factors)") // number prime factors
     return factors.max()!
 }
-
-print("largest prime factor = \(findLargestPrimeFactor(number: 600851475143))")
+var number = 600851475143
+print("largest prime factor = \(findLargestPrimeFactor(&number))")
 
 
